@@ -4,5 +4,5 @@ class Event < ApplicationRecord
         self.event_end = self.event_start + 1.hour
         end
     end
-
+    has_and_belongs_to_many :people
 end
