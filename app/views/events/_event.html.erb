@@ -13,6 +13,14 @@
     <strong>Description:</strong>
     <%= event.description %>
   </p>
+
+  <p>
+    <strong>People:</strong>
+    <% event.people.each do |p| %>
+      <%= p.last_name %>
+      <% end %>
+  </p>
+
   <%= button_to "Delete", event, method: :delete, class: "bg-sky-300 px-2 py-2 rounded text-white" %>
 
 </div>

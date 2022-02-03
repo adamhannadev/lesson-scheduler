@@ -27,6 +27,15 @@
   </div>
 
   <div>
+          <%= form.label :people, "Teacher", style: "display: block" %>
+          <%= collection_select(:person, :person_id, Person.all, :id, :first_name) %>
+  </div>
+  <div>
+          <%= form.label :people, "Teacher", style: "display: block" %>
+          <%= collection_select(:person, :person_id, Person.all, :id, :first_name) %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

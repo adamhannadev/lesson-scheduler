@@ -13,10 +13,12 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @people = Person.all
   end
 
   # GET /events/1/edit
   def edit
+    @people = Person.all
   end
 
   # POST /events or /events.json
