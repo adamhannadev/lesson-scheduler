@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_160833) do
+ActiveRecord::Schema.define(version: 2022_02_05_232619) do
 
   create_table "events", force: :cascade do |t|
     t.datetime "event_start", precision: 6
@@ -20,4 +20,35 @@ ActiveRecord::Schema.define(version: 2022_02_02_160833) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "lessons", force: :cascade do |t|
+    t.datetime "start_time", precision: 6
+    t.datetime "end_time", precision: 6
+    t.integer "student_id", null: false
+    t.integer "teacher_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_lessons_on_student_id"
+    t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "lessons", "students"
+  add_foreign_key "lessons", "teachers"
 end
