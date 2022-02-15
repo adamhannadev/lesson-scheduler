@@ -19,6 +19,9 @@ class LessonsController < ApplicationController
   def edit
   end
 
+  def week
+  end
+
   # POST /lessons or /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
