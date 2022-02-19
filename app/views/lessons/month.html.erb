@@ -4,7 +4,6 @@
     </div>
     <div class="ml-6 object-top">
     <% if lessons.present? %>
-        
         <% @teachers.each do |teacher| %>
             <% x = lessons.select {|lesson| lesson.teacher_id == teacher.id} %>
             <% if x.count > 0 %>

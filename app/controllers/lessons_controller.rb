@@ -18,7 +18,12 @@ class LessonsController < ApplicationController
   # GET /lessons/1/edit
   def edit
   end
-
+  
+  def week
+    @lessons = Lesson.all
+    @teachers = Teacher.all
+  end
+  
   def month
     @lessons = Lesson.all
     @teachers = Teacher.all

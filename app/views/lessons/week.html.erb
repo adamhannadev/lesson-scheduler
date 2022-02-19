@@ -1,0 +1,13 @@
+<%= week_calendar(number_of_weeks: 1, events: @lessons) do |date, lessons| %>
+  <div class="absolute top-0 text-center w-full" %>
+    <%= date.strftime("%b") %>
+    <%= date.day %>
+  </div>
+  <div class="grid-cols-1">
+    <% lessons.each do |lesson| %>
+        <div class="border-2 bg-slate-50">
+        <a href="/lessons/<%= lesson.id%>"><%= lesson.student.last_name %> - <%= lesson.start_time.strftime("%r") %></a>
+        </div>
+    <% end %>
+  </div>  
+<% end %>
