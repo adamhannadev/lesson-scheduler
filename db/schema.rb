@@ -20,14 +20,11 @@ ActiveRecord::Schema.define(version: 2022_02_05_232619) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-<<<<<<< HEAD
   create_table "events_people", id: false, force: :cascade do |t|
     t.integer "event_id", null: false
     t.integer "person_id", null: false
   end
 
-  create_table "people", force: :cascade do |t|
-=======
   create_table "lessons", force: :cascade do |t|
     t.datetime "start_time", precision: 6
     t.datetime "end_time", precision: 6
@@ -39,8 +36,7 @@ ActiveRecord::Schema.define(version: 2022_02_05_232619) do
     t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
   end
 
-  create_table "students", force: :cascade do |t|
->>>>>>> main
+  create_table "people", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "email"
@@ -49,8 +45,15 @@ ActiveRecord::Schema.define(version: 2022_02_05_232619) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-<<<<<<< HEAD
-=======
+  create_table "students", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "teachers", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -62,5 +65,4 @@ ActiveRecord::Schema.define(version: 2022_02_05_232619) do
 
   add_foreign_key "lessons", "students"
   add_foreign_key "lessons", "teachers"
->>>>>>> main
 end
