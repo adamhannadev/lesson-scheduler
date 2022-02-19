@@ -19,7 +19,9 @@ class LessonsController < ApplicationController
   def edit
   end
 
-  def week
+  def month
+    @lessons = Lesson.all
+    @teachers = Teacher.all
   end
 
   # POST /lessons or /lessons.json
