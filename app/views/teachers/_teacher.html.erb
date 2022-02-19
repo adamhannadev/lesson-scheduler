@@ -1,0 +1,27 @@
+<div id="<%= dom_id teacher %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last name:</strong>
+    <%= teacher.last_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First name:</strong>
+    <%= teacher.first_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= teacher.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone:</strong>
+    <%= teacher.phone %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this teacher", teacher, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this teacher', edit_teacher_path(teacher), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
