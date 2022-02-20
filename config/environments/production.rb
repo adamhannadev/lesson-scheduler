@@ -92,8 +92,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.raise_delivery_errors = true
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.perform_deliveries = true
+
 config.action_mailer.default_url_options = { :host => 'ahbd-scheduler.herokuapp.com' }
 ActionMailer::Base.smtp_settings = {
 :address   => "smtp.sendgrid.net",
@@ -104,5 +103,6 @@ ActionMailer::Base.smtp_settings = {
 :authentication => :plain,
 :enable_starttls_auto => true
 }
-
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.perform_deliveries = true
 end
