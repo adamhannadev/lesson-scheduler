@@ -94,9 +94,9 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.perform_deliveries = true
-config.action_mailer.default_url_options = { :host => 'mail.adamhannaballroom.com' }
+config.action_mailer.default_url_options = { :host => 'ahbd-scheduler.herokuapp.com' }
 ActionMailer::Base.smtp_settings = {
-:address   => "mail.adamhannaballroom.com",
+:address   => "smtp.sendgrid.net",
 :domain => 'ahbd-scheduler.herokuapp.com',
 :port      => 465,
 :user_name => "mailer@adamhannaballroom.com",
