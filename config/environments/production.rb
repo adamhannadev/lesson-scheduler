@@ -94,6 +94,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.perform_deliveries = true
+config.action_mailer.default_url_options = { :host => 'mail.adamhannaballroom.com' }
 ActionMailer::Base.smtp_settings = {
 :address   => "mail.adamhannaballroom.com",
 :domain => 'ahbd-scheduler.herokuapp.com',
