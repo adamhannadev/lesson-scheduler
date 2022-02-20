@@ -8,12 +8,12 @@
 
 
 Student.create([
-    {last_name: "Norman", first_name: "Kami", phone: "250-846-6659", email: "askljcalb@sclasc.com"},
-    {last_name: "Gould", first_name: "Linda", phone: "778-542-5129", email: "asclksn@acklnsa.com"}
+    {last_name: "Norman", first_name: "Kami", phone: "250-846-6659", email: "adam.s.hanna@gmail.com"},
+    {last_name: "Gould", first_name: "Linda", phone: "778-542-5129", email: "info@adamhannaballroom.com"}
 ])
 Teacher.create([
     {last_name: "Hanna", first_name: "Adam", phone: "250-480-9246", email: "info@adamhannaballroom.com"},
-    {last_name: "Kottova", first_name: "Tyna", phone: "778-542-5129", email: "tyna@adamhannaballroom.com"}
+    {last_name: "Kottova", first_name: "Tyna", phone: "778-542-5129", email: "adam.s.hanna@gmail.com"}
 ])
 Lesson.create([
     {

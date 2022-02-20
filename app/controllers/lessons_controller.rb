@@ -29,6 +29,11 @@ class LessonsController < ApplicationController
     @teachers = Teacher.all
   end
 
+  def remind
+    @lesson = Lesson.find(params[:id])
+    LessonsMailer.with(lesson: @lesson, student: @lesson.student_id).reminder.deliver_now
+  end
+
   # POST /lessons or /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)

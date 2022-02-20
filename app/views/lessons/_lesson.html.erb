@@ -18,7 +18,10 @@
     <strong class="block font-medium mb-1">Teacher:</strong>
     <%= lesson.teacher.full_name %>
   </p>
-
+  <p>
+  <%= lesson.id %>
+    <a href="/reminder/<%= lesson.id %>">Remind</a>
+  </p>
   <% if action_name != "show" %>
     <%= link_to "Show this lesson", lesson, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this lesson', edit_lesson_path(lesson), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
