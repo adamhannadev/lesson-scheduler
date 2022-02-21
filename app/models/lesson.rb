@@ -6,7 +6,13 @@ class Lesson < ApplicationRecord
 
   before_save :create_default_ending
 
+  def duration
+    (self.end_time - self.start_time).minutes
+   end
   private
+
+ 
+
   def create_default_ending
     if self.end_time.blank?
       self.end_time = self.start_time + 1.hour

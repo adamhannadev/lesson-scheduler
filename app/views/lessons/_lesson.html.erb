@@ -1,22 +1,26 @@
-<div id="<%= dom_id lesson %>">
+<div id="<%= dom_id lesson %>" class="bg-slate-400 p-5 mt-4 mx-auto w-1/2">
   <p class="my-5">
     <strong class="block font-medium mb-1">Start time:</strong>
-    <%= lesson.start_time %>
+    <%= simple_time(lesson.start_time) %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">End time:</strong>
-    <%= lesson.end_time %>
+    <%= simple_time(lesson.end_time) %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Students:</strong>
+    <strong class="block font-medium mb-1">Student:</strong>
     <%= lesson.student.full_name %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Teacher:</strong>
     <%= lesson.teacher.full_name %>
+  </p>
+
+  <p>
+  Duration = <%= ((lesson.duration / 1.hour) / 60) %> hours
   </p>
   <p>
   <%= lesson.id %>
