@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :lessons
   resources :teachers
   resources :students
-  resources :events
+  resources :notes
+  resources :event_statuses
 
   get "/month/", to: "lessons#month"
   get "/week/", to: "lessons#week"

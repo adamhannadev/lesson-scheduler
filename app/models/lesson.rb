@@ -1,6 +1,7 @@
 class Lesson < ApplicationRecord
   belongs_to :student
   belongs_to :teacher
+  has_many :notes
 
   validates :start_time, presence: true
 
