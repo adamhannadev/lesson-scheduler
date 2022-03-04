@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 2022_03_02_043249) do
     t.index ["teacher_id"], name: "index_notes_on_teacher_id"
   end
 
+  create_table "people", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
