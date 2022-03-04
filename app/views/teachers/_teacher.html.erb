@@ -19,6 +19,14 @@
     <%= teacher.phone %>
   </p>
 
+  <p>
+  <strong class="block font-medium mb-1">Notes:</strong>
+  <% teacher.notes.each do |note| %>
+    <%= render "partials/notes", note: note %>  
+  <% end %>
+  </p>
+ 
+
   <% if action_name != "show" %>
     <%= link_to "Show this teacher", teacher, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this teacher', edit_teacher_path(teacher), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
