@@ -9,16 +9,20 @@
     <%= link_to 'New lesson', new_lesson_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="lessons" class="min-w-full">
-    <table class="table-auto min-w-full border-black-500">
+  <div id="lessons" class="min-w-full mt-5">
+    <table class="min-w-full">
       <thead>
-        <th class="border-slate-900">Lesson Time</th>
-        <th>Student</th>
-        <th>Teacher</th>
+        <th class="border border-slate-900">Lesson Time</th>
+        <th class="border border-slate-900">Student</th>
+        <th class="border border-slate-900">Teacher</th>
       </thead>
-      <tbody>
+      <tbody class="border border-slate-500">
       <% @lessons.each do |lesson| %>
-        <tr>
+        <% if lesson.id.even? %>
+        <tr class="border border-slate-500">
+        <% else %>
+        <tr class="border border-slate-500 bg-slate-300">
+        <% end %>
           <td><%= simple_time(lesson.start_time) %></td>
           <td><%= lesson.student.full_name %></td>
           <td><%= lesson.teacher.full_name %></td>
