@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :authorize_admin
   # GET /notes or /notes.json
   def index
     @notes = Note.all
