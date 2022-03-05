@@ -1,0 +1,34 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Students") do |sheet|
+  # Create the header row
+  sheet.add_row ["Last Name", "First Name", "Phone", "Email"]
+  # Create entries for each item
+  @students.each do |student|
+    sheet.add_row [student.last_name, student.first_name, student.phone, student.email]
+  end
+end
+wb.add_worksheet(name: "Teachers") do |sheet|
+  # Create the header row
+  sheet.add_row ["Last Name", "First Name", "Phone", "Email"]
+  # Create entries for each item
+  @teachers.each do |teacher|
+    sheet.add_row [teacher.last_name, teacher.first_name, teacher.phone, teacher.email]
+  end
+end
+wb.add_worksheet(name: "Lessons") do |sheet|
+  # Create the header row
+  sheet.add_row ["Date and Time", "Duration", "Student", "Teacher"]
+  # Create entries for each item
+  @lessons.each do |lesson|
+    sheet.add_row [lesson.start_time, lesson.duration, lesson.student.first_name, lesson.teacher.first_name]
+  end
+end
+wb.add_worksheet(name: "Users") do |sheet|
+  # Create the header row
+  sheet.add_row ["ID", "Email", "Role"]
+  # Create entries for each item
+  @users.each do |user|
+    sheet.add_row [user.id, user.email, user.role]
+  end
+end
