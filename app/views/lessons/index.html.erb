@@ -10,6 +10,23 @@
   </div>
 
   <div id="lessons" class="min-w-full">
-    <%= render @lessons %>
+    <table class="table-auto min-w-full border-black-500">
+      <thead>
+        <th class="border-slate-900">Lesson Time</th>
+        <th>Student</th>
+        <th>Teacher</th>
+      </thead>
+      <tbody>
+      <% @lessons.each do |lesson| %>
+        <tr>
+          <td><%= simple_time(lesson.start_time) %></td>
+          <td><%= lesson.student.full_name %></td>
+          <td><%= lesson.teacher.full_name %></td>
+          <td><%= link_to "Show", lesson %></td>
+          <td><%= button_to "Delete", lesson, :method => "delete" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
