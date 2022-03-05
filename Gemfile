@@ -81,3 +81,4 @@ end
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "simple_calendar", "~> 2.4"
+gem "devise", "~> 4.8"

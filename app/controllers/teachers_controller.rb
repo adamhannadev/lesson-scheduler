@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /teachers or /teachers.json
   def index
     @teachers = Teacher.all

@@ -14,7 +14,8 @@
   <body class="bg-sky-50">
   <%= render "partials/topbar" %>
     <main class="container mx-auto px-4  my-10">
-     
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
   </body>
