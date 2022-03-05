@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 2022_03_05_184053) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "event_statuses", force: :cascade do |t|
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.datetime "event_start", precision: 6
     t.datetime "event_end", precision: 6
