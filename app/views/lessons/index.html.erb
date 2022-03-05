@@ -15,6 +15,7 @@
         <th class="border border-slate-900">Lesson Time</th>
         <th class="border border-slate-900">Student</th>
         <th class="border border-slate-900">Teacher</th>
+        <th class="border border-slate-900">Duration</th>
       </thead>
       <tbody class="border border-slate-500">
       <% @lessons.each do |lesson| %>
@@ -26,6 +27,7 @@
           <td><%= simple_time(lesson.start_time) %></td>
           <td><%= lesson.student.full_name %></td>
           <td><%= lesson.teacher.full_name %></td>
+          <td><%= distance_of_time_in_words lesson.start_time, lesson.end_time %>
           <td><%= link_to "Show", lesson %></td>
           <td><%= button_to "Delete", lesson, :method => "delete" %></td>
         </tr>

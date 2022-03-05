@@ -19,9 +19,12 @@
     <%= lesson.teacher.full_name %>
   </p>
 
-  <p>
-  Duration = <%= ((lesson.duration / 1.hour) / 60) %> hours
+  <p class="my-5">
+  <strong class="block font-medium mb-1">Plan:</strong>
+  <%= lesson.plan %>
   </p>
+
+
   <p>
   <%= lesson.id %>
     <a href="/reminder/<%= lesson.id %>">Remind</a>
