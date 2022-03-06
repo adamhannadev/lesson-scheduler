@@ -11,27 +11,32 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :start_time %>
-    <%= form.datetime_field :start_time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="my-5 columns-2">
+  <div>
+  <%= form.label :start_time %>
+  <%= form.datetime_field :start_time, class: "shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-1/2" %>
+  </div>
+  <div>
+  <%= form.label :end_time %>
+  <%= form.datetime_field :end_time, class: "shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-1/2" %>
+  </div>
   </div>
 
-  <div class="my-5">
-    <%= form.label :end_time %>
-    <%= form.datetime_field :end_time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
+  <div class="my-5 columns-2">
+  <div>
   <%= form.label :student_id %>
-  <%= form.collection_select(:student_id, Student.all, :id, :first_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full") %>
-    <%= form.label :teacher_id %>
-    <%= form.collection_select(:teacher_id, Teacher.all, :id, :first_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full") %>
+  <%= form.collection_select(:student_id, Student.all, :id, :first_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 ") %>
+  </div>
+  <div>
+  <%= form.label :teacher_id %>
+  <%= form.collection_select(:teacher_id, Teacher.all, :id, :first_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2") %>
+  </div>
   </div>
 
   <div class="my-5">
   <%= form.label :plan %>
   <%= form.rich_text_area :plan %>
-</div>
+  </div>
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>

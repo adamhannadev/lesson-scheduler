@@ -8,7 +8,28 @@
     <%= link_to 'New teacher', new_teacher_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="teachers" class="min-w-full">
-    <%= render @teachers %>
-  </div>
+  <div id="teachers" class="min-w-full mt-5">
+  <table class="min-w-full">
+    <thead>
+      <th class="border border-slate-900">Full Name</th>
+      <th class="border border-slate-900">Phone</th>
+      <th class="border border-slate-900">Email</th>
+    </thead>
+    <tbody class="border border-slate-500">
+    <% @teachers.each do |teacher| %>
+      <% if teacher.id.even? %>
+      <tr class="border border-slate-500">
+      <% else %>
+      <tr class="border border-slate-500 bg-slate-300">
+      <% end %>
+        <td><%= teacher.full_name %></td>
+        <td><%= teacher.phone %></td>
+        <td><%= teacher.email %></td>
+        <td><%= link_to "Show", teacher %></td>
+        <td><%= button_to "Delete", teacher, :method => "delete" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 </div>
