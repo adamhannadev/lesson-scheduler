@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_233853) do
+ActiveRecord::Schema.define(version: 2022_03_06_035650) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -64,11 +64,6 @@ ActiveRecord::Schema.define(version: 2022_03_05_233853) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "events_people", id: false, force: :cascade do |t|
-    t.integer "event_id", null: false
-    t.integer "person_id", null: false
-  end
-
   create_table "lessons", force: :cascade do |t|
     t.datetime "start_time", precision: 6
     t.datetime "end_time", precision: 6
@@ -79,20 +74,6 @@ ActiveRecord::Schema.define(version: 2022_03_05_233853) do
     t.text "plan"
     t.index ["student_id"], name: "index_lessons_on_student_id"
     t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
-  end
-
-  create_table "notes", force: :cascade do |t|
-    t.text "body"
-    t.integer "teacher_id"
-    t.integer "student_id"
-    t.integer "lesson_id"
-    t.integer "event_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_notes_on_event_id"
-    t.index ["lesson_id"], name: "index_notes_on_lesson_id"
-    t.index ["student_id"], name: "index_notes_on_student_id"
-    t.index ["teacher_id"], name: "index_notes_on_teacher_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -130,8 +111,4 @@ ActiveRecord::Schema.define(version: 2022_03_05_233853) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "lessons", "students"
   add_foreign_key "lessons", "teachers"
-  add_foreign_key "notes", "events"
-  add_foreign_key "notes", "lessons"
-  add_foreign_key "notes", "students"
-  add_foreign_key "notes", "teachers"
 end

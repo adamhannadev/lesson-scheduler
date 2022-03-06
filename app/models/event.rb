@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-    has_many :notes
+    
     before_create do
         if self.event_end.blank?
         self.event_end = self.event_start + 1.hour

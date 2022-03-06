@@ -1,7 +1,7 @@
 class Teacher < ApplicationRecord
     has_many :lessons
     has_many :students
-    has_many :notes
+    
 
     validates :last_name, presence: true
     validates :first_name, presence: true
