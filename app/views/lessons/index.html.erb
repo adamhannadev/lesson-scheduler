@@ -27,7 +27,7 @@
           <td><%= simple_time(lesson.start_time) %></td>
           <td><%= lesson.student.full_name %></td>
           <td><%= lesson.teacher.full_name %></td>
-          <td><%= distance_of_time_in_words lesson.start_time, lesson.end_time %>
+          <td><%= lesson.duration %></td>
           <td><%= link_to "Show", lesson %></td>
           <td><%= button_to "Delete", lesson, :method => "delete" %></td>
         </tr>
