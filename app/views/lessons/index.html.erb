@@ -32,6 +32,12 @@
           <td><%= button_to "Delete", lesson, :method => "delete" %></td>
         </tr>
         <% end %>
+        <tr>
+        <td>Totals</td>
+        <td></td>
+        <td><%= @lessons.count %></td>
+        <td></td>
+        </tr>
       </tbody>
     </table>
   </div>

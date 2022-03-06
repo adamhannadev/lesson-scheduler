@@ -3,7 +3,8 @@ class LessonsController < ApplicationController
   before_action :authenticate_user!, :authorize_admin
   # GET /lessons or /lessons.json
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.where("start_time >= ? and start_time <= ?",  Time.now.beginning_of_month, Time.now.end_of_month)
+    
   end
 
   # GET /lessons/1 or /lessons/1.json
