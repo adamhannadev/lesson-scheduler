@@ -35,8 +35,8 @@
         <tr>
         <td>Totals</td>
         <td></td>
-        <td><%= @lessons.count %></td>
-        <td></td>
+        <td><%= pluralize(@lessons.count, "Lesson") %></td>
+        <td><%= pluralize(@lessons.sum(:duration), "Hour") %></td>
         </tr>
       </tbody>
     </table>
