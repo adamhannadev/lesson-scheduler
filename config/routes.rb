@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get "users", to: "devise/sessions#new"
   end
   devise_for :users
-  
+  get "/lessons/teachers/:teacher", to: "lessons#index", as: "lessons_by_teacher"
   resources :lessons
   resources :teachers
   resources :students
