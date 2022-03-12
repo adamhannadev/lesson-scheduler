@@ -6,7 +6,6 @@
 
 tasks:
   - init: yarn install && yarn run build && bin/setup
-    command: bin/rails server
     command: npm install -g heroku
 vscode:
   extensions:
