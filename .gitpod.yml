@@ -13,7 +13,7 @@ ports:
     
 tasks:
   - init: yarn install && yarn run build && bin/setup
-    command: npm install -g heroku
+    command: rvm install ruby-2.7.5
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
