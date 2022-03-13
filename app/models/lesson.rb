@@ -1,8 +1,7 @@
 class Lesson < ApplicationRecord
   belongs_to :student
   belongs_to :teacher
-  
-  has_rich_text :plan
+
   validates :start_time, presence: true
 
   before_save :create_default_ending, :save_duration
