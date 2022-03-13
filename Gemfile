@@ -85,3 +85,5 @@ gem "devise", "~> 4.8"
 gem 'caxlsx'
 gem 'caxlsx_rails'
 gem 'rubyzip'
+
+gem 'importmap-rails'

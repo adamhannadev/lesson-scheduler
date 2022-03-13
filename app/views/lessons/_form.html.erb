@@ -35,10 +35,17 @@
 
   <div class="my-5">
   <%= form.label :plan %>
-  <%= form.rich_text_area :plan %>
-  </div>
+  <%= form.text_field :plan, id: "editor" %>
+</div>
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+</script>
