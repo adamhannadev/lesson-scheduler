@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
   def index
     if params[:teacher]
       @teacher = params[:teacher]
-      @lessons = Lesson.where("start_time >= ? and start_time <= ? and teacher_id == ?",  Time.now.beginning_of_month, Time.now.end_of_month, @teacher)
+      @lessons = Lesson.where("start_time >= ? and start_time <= ? and cast(teacher_id as integer) == ?",  Time.now.beginning_of_month, Time.now.end_of_month, @teacher)
   else
     @lessons = Lesson.where("start_time >= ? and start_time <= ?",  Time.now.beginning_of_month, Time.now.end_of_month)
   end
