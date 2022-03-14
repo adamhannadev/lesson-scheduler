@@ -20,3 +20,4 @@ Lesson.create([
         start_time: Time.zone.now, end_time: Time.zone.now + 1.hour, student: Student.first, teacher: Teacher.first
     }
 ])
+User.create! :email => 'adamhannadev@gmail.com', :password => 'password', :password_confirmation => 'password', :role => "Admin"
