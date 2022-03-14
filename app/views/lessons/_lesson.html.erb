@@ -21,7 +21,7 @@
 
   <p class="my-5">
   <strong class="block font-medium mb-1">Plan:</strong>
-  <%= sanitize lesson.plan %>
+  <%= sanitize lesson.plan, tags: %w(strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
   </p>
 
 
