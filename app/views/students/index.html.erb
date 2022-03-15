@@ -17,11 +17,7 @@
     </thead>
     <tbody class="border border-slate-500">
     <% @students.each do |student| %>
-      <% if student.id.even? %>
       <tr class="border border-slate-500">
-      <% else %>
-      <tr class="border border-slate-500 bg-slate-300">
-      <% end %>
         <td><%= student.full_name %></td>
         <td><%= student.phone %></td>
         <td><%= student.email %></td>

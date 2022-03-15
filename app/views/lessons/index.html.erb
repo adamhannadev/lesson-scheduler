@@ -1,40 +1,36 @@
 
 <div class="w-full">
   <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-purple-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Lessons</h1>
-    <%= link_to 'New lesson', new_lesson_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to 'New lesson', new_lesson_path, class: "rounded-lg py-3 px-5 bg-purple-600 text-white block font-medium" %>
   </div>
  
   <% Teacher.all.each do |t| %>
-    <%= link_to t.first_name, lessons_by_teacher_url(teacher: t.id) %>
+    <%= link_to t.first_name, lessons_by_teacher_url(teacher: t.id), class: "font-bold p-1 bg-purple-400 hover:bg-purple-500 hover:text-yellow-400" %>
     <% end %>
-    <%= link_to "All", lessons_path %>
+    <%= link_to "All", lessons_path, class: "font-bold p-1 hover:text-yellow-400 bg-purple-400 hover:bg-purple-500" %>
 
   <div id="lessons" class="min-w-full mt-5">
     <table class="min-w-full">
       <thead>
-        <th class="border border-slate-900">Lesson Time</th>
-        <th class="border border-slate-900">Student</th>
-        <th class="border border-slate-900">Teacher</th>
-        <th class="border border-slate-900">Duration</th>
+        <th class="border ">Lesson Time</th>
+        <th class="border ">Student</th>
+        <th class="border ">Teacher</th>
+        <th class="border ">Duration</th>
       </thead>
-      <tbody class="border border-slate-500">
+      <tbody class="border">
       <% @lessons.each do |lesson| %>
-        <% if lesson.id.even? %>
-        <tr class="border border-slate-500">
-        <% else %>
-        <tr class="border border-slate-500 bg-slate-300">
-        <% end %>
-          <td><%= simple_time(lesson.start_time) %></td>
+        <tr class="border hover:bg-purple-200">
+          <td><%= simple_datetime(lesson.start_time) %></td>
           <td><%= lesson.student.full_name %></td>
           <td><%= lesson.teacher.full_name %></td>
           <td><%= lesson.duration %></td>
-          <td><%= link_to "Show", lesson %></td>
-          <td><%= button_to "Delete", lesson, :method => "delete" %></td>
+          <td><%= link_to "Show", lesson, class: "font-bold " %></td>
+          <td><%= button_to "Delete", lesson, :method => "delete", class: "font-bold" %></td>
         </tr>
         <% end %>
         <tr>

@@ -1,37 +1,35 @@
-<div id="<%= dom_id lesson %>" class="bg-slate-400 p-5">
-  <p class="my-5">
+<div id="<%= dom_id lesson %>" class="bg-purple-50 p-5">
+
+<div class="row flex">
+<p class="text-3xl flex-grow">
+<%= lesson.student.full_name %>
+</p>
+<p class="text-3xl flex-grow"><%= lesson.start_time.to_date %></p>
+</div>
+
+<div class="flex flex-wrap gap-10 flex-grow">
+<p class="my-5">
     <strong class="block font-medium mb-1">Start time:</strong>
     <%= simple_time(lesson.start_time) %>
-  </p>
-
-  <p class="my-5">
     <strong class="block font-medium mb-1">End time:</strong>
     <%= simple_time(lesson.end_time) %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Student:</strong>
-    <%= lesson.student.full_name %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Teacher:</strong>
     <%= lesson.teacher.full_name %>
   </p>
+</div>
+  
 
   <p class="my-5">
   <strong class="block font-medium mb-1">Plan:</strong>
-  <%= sanitize lesson.plan, tags: %w(strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
+  <%= sanitize lesson.plan, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
   </p>
 
-
-  <p>
-  <%= lesson.id %>
-    <a href="/reminder/<%= lesson.id %>">Remind</a>
-  </p>
   <% if action_name != "show" %>
-    <%= link_to "Show this lesson", lesson, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this lesson', edit_lesson_path(lesson), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this lesson", lesson, class: "rounded-lg py-3 px-5 bg-purple-200 inline-block font-medium" %>
+    <%= link_to 'Edit this lesson', edit_lesson_path(lesson), class: "rounded-lg py-3 ml-2 px-5 bg-purple-200 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
 </div>
