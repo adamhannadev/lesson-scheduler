@@ -1,0 +1,42 @@
+<div id="<%= dom_id routine %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= sanitize routine.description, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Student:</strong>
+    <%= routine.student_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Teacher:</strong>
+    <%= routine.teacher_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Song:</strong>
+    <%= routine.song %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Style:</strong>
+    <%= routine.style %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Level:</strong>
+    <%= routine.level %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Dance:</strong>
+    <%= routine.dance %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this routine", routine, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this routine', edit_routine_path(routine), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_09_231514) do
+ActiveRecord::Schema.define(version: 2022_03_18_190442) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -77,6 +77,20 @@ ActiveRecord::Schema.define(version: 2022_03_09_231514) do
     t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
   end
 
+  create_table "routines", force: :cascade do |t|
+    t.text "description"
+    t.integer "student_id", null: false
+    t.integer "teacher_id", null: false
+    t.string "song"
+    t.string "style"
+    t.string "level"
+    t.string "dance"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_routines_on_student_id"
+    t.index ["teacher_id"], name: "index_routines_on_teacher_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -112,4 +126,6 @@ ActiveRecord::Schema.define(version: 2022_03_09_231514) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "lessons", "students"
   add_foreign_key "lessons", "teachers"
+  add_foreign_key "routines", "students"
+  add_foreign_key "routines", "teachers"
 end

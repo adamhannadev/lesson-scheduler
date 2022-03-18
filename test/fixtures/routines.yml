@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  student: one
+  teacher: one
+  song: MyString
+  style: MyString
+  level: MyString
+  dance: MyString
+
+two:
+  description: MyText
+  student: two
+  teacher: two
+  song: MyString
+  style: MyString
+  level: MyString
+  dance: MyString

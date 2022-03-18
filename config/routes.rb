@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :routines
   
   devise_scope :user do
     # Redirects signing out users back to sign-in
