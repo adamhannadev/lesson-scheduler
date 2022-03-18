@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 @layer base {
+  ul {
+    list-style: disc;
+  }
     h1 {
         @apply text-3xl;
       }
