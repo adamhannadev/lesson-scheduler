@@ -6,19 +6,20 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Student:</strong>
-    <%= routine.student_id %>
+    <%= routine.student.first_name %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Teacher:</strong>
-    <%= routine.teacher_id %>
+    <%= routine.teacher.first_name %>
   </p>
 
-  <p class="my-5">
+  <% if routine.song %>
+    <p class="my-5">
     <strong class="block font-medium mb-1">Song:</strong>
     <%= routine.song %>
   </p>
-
+    <% end %>
   <p class="my-5">
     <strong class="block font-medium mb-1">Style:</strong>
     <%= routine.style %>
