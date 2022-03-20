@@ -87,3 +87,4 @@ gem 'caxlsx_rails'
 gem 'rubyzip'
 
 gem 'importmap-rails'
+gem 'montrose'
