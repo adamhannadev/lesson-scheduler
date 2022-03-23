@@ -27,6 +27,10 @@
   <%= sanitize lesson.plan, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
   </p>
 
+  <p>
+  <%= link_to "Remind", reminder_path %>
+  </p>
+
   <% if action_name != "show" %>
     <%= link_to "Show this lesson", lesson, class: "rounded-lg py-3 px-5 bg-purple-200 inline-block font-medium" %>
     <%= link_to 'Edit this lesson', edit_lesson_path(lesson), class: "rounded-lg py-3 ml-2 px-5 bg-purple-200 inline-block font-medium" %>
