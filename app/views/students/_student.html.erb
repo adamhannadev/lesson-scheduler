@@ -27,6 +27,7 @@
   </p>
 
   <p class="my-5">
+  <strong>Lessons this Month</strong>
   <ul>
   <% student.lessons.where("start_time >= ? and start_time <= ?",  Time.now.beginning_of_month, Time.now.end_of_month).order('start_time DESC').each do |lesson| %>
       <li><%= link_to(simple_datetime(lesson.start_time) + " with " + lesson.teacher.first_name + " for " + pluralize(lesson.duration, "hour."), lesson) %></li>

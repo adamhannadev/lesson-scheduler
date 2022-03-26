@@ -9,6 +9,11 @@ class Lesson < ApplicationRecord
   def duration
     difference = ((self.end_time - self.start_time) / 1.hour).round(2)
    end
+
+  def previous
+    Lesson.where("start_time < ?", self.start_time).order("start_time ASC").last
+  end
+
   private
 
  def save_duration

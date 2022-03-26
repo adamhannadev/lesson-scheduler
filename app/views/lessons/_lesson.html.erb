@@ -27,6 +27,15 @@
   <%= sanitize lesson.plan, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
   </p>
 
+  
+  <% if lesson.previous %>
+  <p>
+  <strong><%= link_to "Previous Lesson", lesson.previous %></strong>
+  <%= sanitize lesson.previous.plan, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
+  </p>
+  <% end %>
+
+  
   <p>
   <%= link_to "Remind", reminder_path %>
   </p>
