@@ -88,3 +88,4 @@ gem 'rubyzip'
 
 gem 'importmap-rails'
 gem 'montrose'
+gem 'hirb'
