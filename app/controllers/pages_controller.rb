@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     end
 
     def export
-        @lessons = Lesson.all
+        @lessons = Lesson.order(:start_time, teacher_id: :desc)
         @students = Student.all
         @teachers = Teacher.all
         @users = User.all

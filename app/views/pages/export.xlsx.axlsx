@@ -23,6 +23,12 @@ wb.add_worksheet(name: "Lessons") do |sheet|
   @lessons.each do |lesson|
     sheet.add_row [lesson.start_time, lesson.duration, lesson.student.first_name, lesson.teacher.first_name]
   end
+  sheet.auto_filter = "A1:D#{@lessons.count}"
+  sheet.add_pivot_table "G1:J#{@lessons.count + 1}", "A1:D#{@lessons.count}" do |pivot_table|
+    pivot_table.rows = ['Student']
+    pivot_table.columns = ['Teacher']
+    pivot_table.data = [ref: 'Duration', num_fmt: 4]
+    end
 end
 wb.add_worksheet(name: "Users") do |sheet|
   # Create the header row
