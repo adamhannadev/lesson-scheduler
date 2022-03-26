@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     end
 
     def export
-        @lessons = Lesson.order(:start_time, teacher_id: :desc)
+        @lessons = Lesson.where("start_time >= ? and start_time <= ?",  Time.now.beginning_of_month, Time.now.end_of_month).order(:start_time, teacher_id: :desc)
         @students = Student.all
         @teachers = Teacher.all
         @users = User.all
