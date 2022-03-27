@@ -10,33 +10,14 @@
     
   </head>
 
-  <body class="">
-    <main class="container mx-auto px-4 flex my-10">
-    <!-- <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p> -->
-     <div class="w-1/4 mr-10">
-     <%= image_tag("ahbdLogoBannerWhite.png") %>
-      <div class="flex flex-col gap-y-4">
-     <a class="px-4 py-4 border-1 bg-slate-300 text-slate-600 hover:text-slate-800 font-bold shadow-lg " href="/students">Students</a>
-        <a class="px-4 py-4 border-1 bg-slate-300 text-slate-600 hover:text-slate-800 font-bold shadow-lg" href="/teachers">Teachers</a>
-        <a class="px-4 py-4 border-1 bg-slate-300 text-slate-600 hover:text-slate-800 font-bold shadow-lg" href="/lessons">Lessons</a>
-        <a class="px-4 py-4 border-1 bg-slate-300 text-slate-600 hover:text-slate-800 font-bold shadow-lg" href="/month">Calendar</a>
-        <a class="px-4 py-4 border-1 bg-slate-300 text-slate-600 hover:text-slate-800 font-bold shadow-lg" href="/routines">Routines</a>
-        
-        <% if current_user  %>
-        <%= button_to(
-      "Log Out",
-      destroy_user_session_path,
-      method: :delete, class: "px-4 py-4 border-1 bg-slate-300 text-slate-600 hover:text-slate-800 font-bold shadow-lg"
-    ) %>
-    <% end %>
-    </div>
-     
-     </div>
-     <div class="w-3/4 mt-8">
+  <body>
+    <main class="relative flex min-h-screen w-screen">
+      <div class="bg-purple-200 w-1/6 pt-10">
+      Nav 
+      </div>
+     <div class="w-5/6 pt-10 bg-blue-200">
       <%= yield %>
      </div>
-      
     </main>
   </body>
 </html>
