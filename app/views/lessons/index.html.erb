@@ -15,17 +15,19 @@
     <%= link_to "All", lessons_path, class: "font-bold p-1 hover:text-yellow-400 bg-purple-400 hover:bg-purple-500" %>
 
   <div id="lessons" class="min-w-full mt-5">
-    <table class="min-w-full">
-      <thead>
-        <th class="border ">Lesson Time</th>
-        <th class="border ">Student</th>
-        <th class="border ">Teacher</th>
-        <th class="border ">Duration</th>
+    <table class="min-w-full border border-black">
+      <thead class="text-left">
+      <th class="">Lesson Date</th>
+      <th class="">Lesson Time</th>
+      <th class="">Student</th>
+      <th class="">Teacher</th>
+      <th class="">Duration</th>
       </thead>
-      <tbody class="border">
+      <tbody class="">
       <% @lessons.each do |lesson| %>
-        <tr class="border hover:bg-purple-200">
-          <td><%= simple_datetime(lesson.start_time) %></td>
+        <tr class="hover:bg-purple-300">
+          <td><%= lesson.start_time.strftime('%D') %></td>
+          <td><%= lesson.start_time.strftime('%l:%M %p') %></td>
           <td><%= lesson.student.full_name %></td>
           <td><%= lesson.teacher.full_name %></td>
           <td><%= lesson.duration %></td>

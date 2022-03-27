@@ -29,4 +29,15 @@ Lesson.create(
 ) 
 end
 
+10.times do 
+Routine.create(
+    student: Student.find(rand(1..20)),
+    teacher: Teacher.find(rand(1..4)),
+    description: Faker::Books::Lovecraft.sentences(number: 4),
+    song: Faker::Music::Opera.verdi,
+    level: Faker::Gender.type,
+    style: Faker::Book.genre,
+    dance: Faker::Artist.name
+)
+end
 User.create! :email => 'adamhannadev@gmail.com', :password => 'password', :password_confirmation => 'password', :role => "Admin"

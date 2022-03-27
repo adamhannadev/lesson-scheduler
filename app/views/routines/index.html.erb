@@ -9,6 +9,8 @@
   </div>
 
   <div id="routines" class="min-w-full">
-    <%= render @routines %>
+    <% @routines.each do |r| %>
+      <%=link_to(r.student.full_name + " - " + r.full_name, r) %><br>
+      <% end %>
   </div>
 </div>

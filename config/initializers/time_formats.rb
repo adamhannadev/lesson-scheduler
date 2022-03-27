@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:custom_long_ordinal] = "%B %e, %l:%M %p"
