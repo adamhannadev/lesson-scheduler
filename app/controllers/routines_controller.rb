@@ -3,7 +3,7 @@ class RoutinesController < ApplicationController
   before_action :authenticate_user!, :authorize_admin
   # GET /routines or /routines.json
   def index
-    @routines = Routine.all.order(student: :asc)
+    @routines = Routine.all.order(student_id: :asc)
   end
 
   # GET /routines/1 or /routines/1.json
