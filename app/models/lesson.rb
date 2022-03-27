@@ -3,7 +3,6 @@ class Lesson < ApplicationRecord
   belongs_to :teacher
 
   validates :start_time, presence: true
-
   before_save :create_default_ending, :save_duration
 
   def duration
@@ -11,7 +10,7 @@ class Lesson < ApplicationRecord
    end
 
   def previous
-    Lesson.where("start_time < ?", self.start_time).order("start_time ASC").last
+    Lesson.where("start_time < ? and student_id = ?", self.start_time, self.student.id).order("start_time ASC").last
   end
 
   private

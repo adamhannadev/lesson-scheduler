@@ -729,20 +729,6 @@
   resolved "https://registry.npmjs.org/@rails/actioncable/-/actioncable-7.0.1.tgz"
   integrity sha512-lbGc1z2RXdiWZJE/8o2GSe2gek82EoKd2YvjRrqV//0J3/JImONUYwZ2XPmS1R9R2oth1XlIG0YidqdeTty0TA==
 
-"@rails/actiontext@^7.0.2-2":
-  version "7.0.2"
-  resolved "https://registry.npmjs.org/@rails/actiontext/-/actiontext-7.0.2.tgz"
-  integrity sha512-WD9JSKnXIqNokdvxCnx120+8qctbb9vOXRhJ8LQ3K4YMu5yn74AtFVy68GB0zWcOEumeQI018wtWjSsYrHo5TQ==
-  dependencies:
-    "@rails/activestorage" ">= 7.0.0-alpha1"
-
-"@rails/activestorage@>= 7.0.0-alpha1":
-  version "7.0.2"
-  resolved "https://registry.npmjs.org/@rails/activestorage/-/activestorage-7.0.2.tgz"
-  integrity sha512-E/W80bMnlhmLz63GvY4fn82s9nDk8ZnzWBO++G3uQhwKAT/xdHgdL8VNfTOK14VKCQwHxJuBCXYnFXY68FOfFw==
-  dependencies:
-    spark-md5 "^3.0.1"
-
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.npmjs.org/@sindresorhus/is/-/is-0.14.0.tgz"
@@ -3117,11 +3103,6 @@ sort-keys@^2.0.0:
   version "1.0.2"
   resolved "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.2.tgz"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
-
-spark-md5@^3.0.1:
-  version "3.0.2"
-  resolved "https://registry.npmjs.org/spark-md5/-/spark-md5-3.0.2.tgz"
-  integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
 
 sparkline@^0.2.0:
   version "0.2.0"
