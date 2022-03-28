@@ -5,8 +5,8 @@
   </div>
   <div class="grid-cols-1">
     <% lessons.each do |lesson| %>
-        <div class="border-2 bg-slate-50">
-        <a href="/lessons/<%= lesson.id%>"><%= lesson.student.last_name %> - <%= lesson.start_time.strftime("%r") %></a>
+        <div class="border border-black border-1 m-1 bg-purple-800 text-white text-xs p-1">
+        <a href="/lessons/<%= lesson.id%>"><%= lesson.student.last_name %> - <%= lesson.start_time.strftime("%I:%M%p") %></a>
         </div>
     <% end %>
   </div>  
