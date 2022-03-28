@@ -1,30 +1,40 @@
-<div id="<%= dom_id lesson %>" class="w-full bg-blue-500">
-
+<div id="<%= dom_id lesson %>" class="w-full space-y-10 text-center">
+<div class="flex flex-row font-bold">
+<div class="w-1/2 text-lg">
 <%= lesson.student.full_name %>
-<%= lesson.start_time.to_date %>
-<strong class="block font-medium mb-1">Start time:</strong>
+</div>
+<div class="w-1/2">
+<%= lesson.start_time.strftime("%A, %B %d at %I:%M%p")%>
+</div>
+</div>
+
+<div class="flex flex-row space-x-16">
+<strong>Start time:</strong>
     <%= simple_time(lesson.start_time) %>
-    <strong class="block font-medium mb-1">End time:</strong>
+
+  
+    <strong>End time:</strong>
     <%= simple_time(lesson.end_time) %>
 
-    <strong class="block font-medium mb-1">Teacher:</strong>
+    <strong>Teacher:</strong>
     <%= lesson.teacher.full_name %>
   
-  <strong class="block font-medium mb-1">Plan:</strong>
+</div>
+
+  <div id="plans" class="flex flex-row">
+  <div class="w-1/3">
+  <strong class="">Plan:</strong>
   <%= sanitize lesson.plan, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
-
-
-  
-  <% if lesson.previous %>
-
-  <strong><%= link_to "Previous Lesson", lesson.previous %></strong>
-  <%= sanitize lesson.previous.plan, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
-
-  <% end %>
-
-  
+  </div>
  
-  <%= link_to "Remind", reminder_path %>
+  <div class="w-1/3">
+  <% if lesson.previous %>
+  <strong><%= link_to "Previous Lesson:", lesson.previous %></strong><br>
+  <%= sanitize lesson.previous.plan, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
+  <% end %>
+  </div>
+ 
+  </div>
 
   <% if action_name != "show" %>
     <%= link_to "Show this lesson", lesson, class: "rounded-lg py-3 px-5 bg-purple-200 font-medium" %>
