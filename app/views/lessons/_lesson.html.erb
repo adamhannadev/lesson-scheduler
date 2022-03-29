@@ -1,35 +1,39 @@
-<div id="<%= dom_id lesson %>" class="w-full space-y-10 text-center">
-<div class="flex flex-row font-bold">
-<div class="w-1/2 text-lg">
+<div id="<%= dom_id lesson %>" class="w-full space-y-10">
+<div class="flex flex-row font-bold text-center">
+<div class="w-1/2 flex-auto text-xl">
 <%= lesson.student.full_name %>
 </div>
-<div class="w-1/2">
+<div class="w-1/2 flex-auto">
 <%= lesson.start_time.strftime("%A, %B %d at %I:%M%p")%>
 </div>
 </div>
 
-<div class="flex flex-row space-x-16">
-<strong>Start time:</strong>
+<div class="flex w-full text-center">
+  <div class="flex-auto">
+  <strong>Start time:</strong>
     <%= simple_time(lesson.start_time) %>
+  </div> 
+  <div class="flex-auto">
+  <strong>End time:</strong>
+  <%= simple_time(lesson.end_time) %>
+  </div> 
+  <div class="flex-auto">
+  <strong>Teacher:</strong>
+  <%= lesson.teacher.full_name %>
+  </div>    
 
-  
-    <strong>End time:</strong>
-    <%= simple_time(lesson.end_time) %>
-
-    <strong>Teacher:</strong>
-    <%= lesson.teacher.full_name %>
   
 </div>
 
-  <div id="plans" class="flex flex-row">
-  <div class="w-1/3">
-  <strong class="">Plan:</strong>
+  <div id="plans" class="flex flex-row gap-4">
+  <div class="w-1/2 border border-black p-4">
+  <h3 class="">Plan:</h3><br>
   <%= sanitize lesson.plan, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
   </div>
  
-  <div class="w-1/3">
+  <div class="w-1/2 border border-black p-4">
   <% if lesson.previous %>
-  <strong><%= link_to "Previous Lesson:", lesson.previous %></strong><br>
+  <h3><%= link_to "Previous Lesson:", lesson.previous %></h3><br>
   <%= sanitize lesson.previous.plan, tags: %w(p strong em a ul li h1 h2 h3 h4), attributes: %w(href) %>
   <% end %>
   </div>
