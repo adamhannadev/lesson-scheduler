@@ -6,8 +6,8 @@ class LessonsMailer < ApplicationMailer
   #   en.lessons_mailer.reminder.subject
   #
   def reminder
-    @lesson = Lesson.first
-    @student = Student.first
+    @lesson = params[:lesson]
+    @student = @lesson.student
     @greeting = "Hello " + @student.first_name
     
     mail to: @student.email

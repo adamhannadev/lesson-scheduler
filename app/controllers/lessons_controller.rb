@@ -36,7 +36,7 @@ class LessonsController < ApplicationController
 
   def remind
     @lesson = Lesson.find(params[:id])
-    LessonsMailer.with(lesson: @lesson, student: @lesson.student_id).reminder.deliver_now
+    LessonsMailer.with(lesson: @lesson).reminder.deliver_now
   end
 
   # POST /lessons or /lessons.json

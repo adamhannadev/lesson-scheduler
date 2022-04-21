@@ -1,9 +1,9 @@
-<h1>Lesson Reminder</h1>
+<h2>Private Lesson Reminder</h2>
 
 <p>
-  <%= @greeting %>,
-    Your lesson with <%= @lesson.teacher.first_name %> is scheduled for <%= @lesson.start_time.strftime("%c") %>.
-    Please call if you wish to cancel. Thanks!
+  <%= @greeting %>,<br>
+    Your lesson with <%= @lesson.teacher.first_name %> is scheduled for <%= @lesson.start_time.strftime("%A, %B %d at %I:%M%p") %>.<br>
+    Please call 250-480-9246 or email back if you need to reschedule your lesson.<br><br> Have a wonderful day!<br>
 
     Adam
 </p>
